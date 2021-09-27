@@ -12,9 +12,17 @@ Problem 1
 problem_1_df = tibble(
   random_samp = rnorm(10),
   positive_samp = random_samp > 0,
-  vec = vector(mode = 'character', length = 10)
-  factor(fac, levels = c("One", "Two", "Three"))
+  vec = vector(mode = 'character', length = 10),
+  factor(levels = c("One", "Two", "Three"), length(10))
 )
 ```
 
+```{r Mean}
+mean(pull(problem_1_df))
+```
+
+
+```{r Problem 2}
+data("penguins", package = "palmerpenguins")
+```
 
