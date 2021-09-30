@@ -20,3 +20,11 @@ problem_1_df = tibble(
 )
 ```
 
+
+```{r Mean}
+mean(pull(problem_1_df, random_samp))
+mean(pull(problem_1_df, is_positive))
+mean(pull(problem_1_df, cat_names))
+mean(pull(problem_1_df, cats_colors))
+```
+
