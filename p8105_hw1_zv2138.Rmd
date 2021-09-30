@@ -28,8 +28,12 @@ mean(pull(problem_1_df, cat_names))
 mean(pull(problem_1_df, cats_colors))
 ```
 
-```{r Mean with as.numeric, result="hides"}
-as.numeric(pull(problem_1_df, is_positive))
-as.numeric(pull(problem_1_df, cat_names))
-as.numeric(pull(problem_1_df, cats_colors))
-```
+What works and what doesn’t?
+
+I was able to take the mean of my random_samp variable. This makes sense to me because we are taking the mean value from a set of 10 numbers.
+
+I was able to take the mean of my is_positive variable. This produced a numeric output. This doesn't make sense to me because this variable is of type logic and stores True and False values. It doesn't make sense that R thinks you can take the mean of True and False statements. 
+
+I was not able to take the mean of my character vector cat_names. My function returned NA. This makes sense to me because this vector holds characters. You can not take the mean of a set of characters.
+
+I was not able to take the mean of my factor vector. My function returned NA. This makes sense to me because the input argument is not numeric. 
