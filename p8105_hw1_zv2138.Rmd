@@ -37,3 +37,18 @@ I was able to take the mean of my is_positive variable. This produced a numeric 
 I was not able to take the mean of my character vector cat_names. My function returned NA. This makes sense to me because this vector holds characters. You can not take the mean of a set of characters.
 
 I was not able to take the mean of my factor vector. My function returned NA. This makes sense to me because the input argument is not numeric. 
+
+
+```{r Mean with as.numeric, result="hides"}
+as.numeric(pull(problem_1_df, is_positive))
+as.numeric(pull(problem_1_df, cat_names))
+as.numeric(pull(problem_1_df, cats_colors))
+```
+
+What happens, and why? Does this help explain what happens when you try to take the mean?
+
+My logical vector was converted into a list of numeric 1's and 0's. It seems that R stores logical variables as either a 0 for FALSE or a 1 for TRUE. This makes sense why we were able to take the mean of my logical is_positive variable because R is calculating the mean of 10 numbers made up of 0's and 1's. 
+
+My character vector called cat_names returned a list of 10 NAs. This makes sense why we were not able to return a mean value. Character strings can not be formated into numbers so a mean can not be cacluated so my mean function feturn NA.  
+
+My factor vector returned a list of 1's, 2's, and 3's. These numbers correspond to what level each vector entry is coded for. For example Black is coded as level 1, Red as level 2 and White as level 3. 
