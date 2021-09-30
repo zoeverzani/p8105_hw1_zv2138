@@ -8,21 +8,15 @@ library(tidyverse)
 ```
 
 Problem 1 
+
 ```{r Creating the df}
 problem_1_df = tibble(
   random_samp = rnorm(10),
-  positive_samp = random_samp > 0,
-  vec = vector(mode = 'character', length = 10),
-  factor(levels = c("One", "Two", "Three"), length(10))
+  is_positive = random_samp > 0,
+  cat_names = c('Susan', 'Helen', 'Sally', 'Matt', 'George', 'Paolo', 'Oliver',
+               'Zoe', 'Paul', 'Laura'),
+  cats_colors = factor(c("Black", "White", "Red", "Black", "Red", "Red",
+                         "Black", "White", "White", "Black"))
 )
-```
-
-```{r Mean}
-mean(pull(problem_1_df))
-```
-
-
-```{r Problem 2}
-data("penguins", package = "palmerpenguins")
 ```
 
