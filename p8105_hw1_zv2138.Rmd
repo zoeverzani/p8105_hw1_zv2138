@@ -62,4 +62,8 @@ data("penguins", package = "palmerpenguins")
 The penguins dataset has the following variables `r colnames(penguins)`. Data was collected from `r min(pull(penguins, year))` to `r max(pull(penguins, year))`. Penguins come from the following islands: `r levels(pull(penguins, island))`. Penguins from the following species were examined: `r levels(pull(penguins, species))`. There are `r nrow(penguins)` penguins in our dataset with `r ncol(penguins)` variables collected. The mean flipper length is `r mean(pull(penguins, flipper_length_mm), na.rm = TRUE)`
 
 
+```{r Scatterplot}
+ggplot(penguins, aes(x = (bill_length_mm), y = (flipper_length_mm), color = species)) + geom_point(na.rm = TRUE)
+ggsave("penguins_flipper_length_vs_bill_length.png", height = 4, width = 6)
+```
 
